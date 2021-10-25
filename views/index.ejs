@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>html</title>
+</head>
+<body>
+    <h1>Is it a Palindrome?</h1>
+
+    <form action="/palindrome" method="POST">
+        <input type="text" placeholder="palindrome" name="word">
+        <button type="submit">Let's find out!</button>
+    </form>
+
+    <ul class="palindromes">
+    <% for (var i=0; i<palindrome.length; i++) { %>
+        <li class="palindrome">
+            <span><%= palindrome[i].word %></span>
+            <span><%= palindrome[i].isIt %></span>
+            <span><button class="fa fa-trash" aria-hidden="true">Delete</button></span>
+        </li>
+    <% } %>
+    </ul>
+    
+    <script src="main.js"></script>
+</body>
+</html>

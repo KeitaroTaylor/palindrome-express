@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>html</title>
+</head>
+<body>
+    <h1>Is it a Palindrome?</h1>
+
+    <input type="text">
+    <button>Let's find out!</button>
+    <h2></h2>
+    
+    <script type="text/javascript">
+        document.querySelector('button').addEventListener('click', checkPalindrome)
+
+        function checkPalindrome() {
+            let nameEntered = document.querySelector('input').value.toLowerCase()
+            fetch(`/api?name=${nameEntered}`)
+                .then(response => response.json())
+                .then((data) => {
+                document.querySelector('h2').innerText = data.result
+                })
+        }
+        
+    </script>
+</body>
+</html>
